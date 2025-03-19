@@ -41,6 +41,9 @@ def init_blueprints():
     from blueprints import display as display_blueprint
     app.register_blueprint(display_blueprint.display)
 
+    from blueprints import main as main_blueprint
+    app.register_blueprint(main_blueprint.main)
+
     from blueprints import auth as auth_blueprint
     app.register_blueprint(auth_blueprint.auth)
 
