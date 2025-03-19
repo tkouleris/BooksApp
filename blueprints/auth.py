@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from flask_cors import cross_origin
 from werkzeug.security import check_password_hash
 from app import app, token_required
@@ -124,3 +124,7 @@ def recover_password():
     user_repository.update({'password': data['password'], 'forgot_password_token':None}, user)
 
     return {'success': True, 'message': 'Password Changed'}
+
+@auth.route("/", methods=['GET'])
+def index():
+    return render_template('index.html',)
