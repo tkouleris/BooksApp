@@ -20,7 +20,7 @@ def get_user():
 
 def get_book_image(book):
     image = None
-    image_folder = app.config['BOOK_IMAGES_FOLDER'] + "\\" +str(book.user_id)
+    image_folder = os.path.join(app.config['BOOK_IMAGES_FOLDER'],"/",str(book.user_id))
     image_full_path = os.path.join(image_folder, str(book.id) + '.jpg')
     if pathlib.Path(image_full_path).is_file():
         image = app.config['APP_BASE_URL'] + '/static/book_image/' + str(book.user_id) + '/' + str(
