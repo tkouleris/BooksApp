@@ -25,7 +25,7 @@ def get_book_image(book):
     if pathlib.Path(image_full_path).is_file():
         image = app.config['APP_BASE_URL'] + '/static/book_image/' + str(book.user_id) + '/' + str(
             book.id) + '.jpg'
-    return image_full_path
+    return image
 
 
 def get_user_image(user):
