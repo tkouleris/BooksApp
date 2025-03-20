@@ -30,7 +30,7 @@ def get_book_image(book):
 
 def get_user_image(user):
     image = app.config['APP_BASE_URL'] + '/static/default_image/avatar.png'
-    image_folder = app.config['USER_IMG_FOLDER'] + "\\"
+    image_folder = app.config['USER_IMG_FOLDER']
     image_full_path = os.path.join(image_folder, str(user.id) + '.jpg')
     if pathlib.Path(image_full_path).is_file():
         image = app.config['APP_BASE_URL'] + '/static/user_image/' + str(user.id) + '.jpg'
