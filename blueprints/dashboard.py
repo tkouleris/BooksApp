@@ -43,7 +43,7 @@ def index():
             'total_books':total_books,
             'total_currently_reading':total_currently_reading,
             'total_to_read_books':total_to_read_books,
-            'read_percentage': round((total_read_books / total_books) * 100),
+            'read_percentage': round((total_read_books / total_books) * 100, 2),
             'char_data': {
                 'labels': labels,
                 'data': data
