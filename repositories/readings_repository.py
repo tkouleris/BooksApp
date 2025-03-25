@@ -41,7 +41,7 @@ class ReadingsRepository:
 
     def find_latest_finished(self, user_id, num_of_records=3):
         return (Readings.query.filter(Readings.ended != None, Readings.user_id == user_id)
-                .order_by(Readings.ended)
+                .order_by(Readings.ended.desc())
                 .limit(num_of_records).all())
 
     def find_all_readings(self, user_id, per_page=None, page=None):
