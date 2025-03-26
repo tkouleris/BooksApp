@@ -11,7 +11,9 @@ main = Blueprint('main', __name__)
 @main.route('/', defaults={'path': ''})
 @main.route('/<path:path>')
 def serve_react_app(path):
-    if path != "" and not path.startswith("static") and not path.startswith("api"):
-        return render_template('index.html')
-    else:
-        return send_from_directory('static', path)
+    return render_template('index.html')
+    # print(path != "" and not path.startswith("static") and not path.startswith("api"))
+    # if path != "" and not path.startswith("static") and not path.startswith("api"):
+    #     return render_template('index.html')
+    # else:
+    #     return send_from_directory('static', path)
